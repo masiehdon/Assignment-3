@@ -1,0 +1,544 @@
+.winner {
+  background-color: crimson;
+  color: rgb(0, 0, 0);
+}
+
+.display-wins {
+  color: rgb(182, 17, 17);
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+#total-wins-0,
+#total-wins-1 {
+  text-align: center;
+}
+
+@media only screen and (min-width: 900px) {
+  body {
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flexbox;
+    flex-direction: column;
+    background-color: rgb(199, 137, 191);
+    text-transform: uppercase;
+  }
+
+  header {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background-color: grey;
+  }
+
+  #grid-container {
+    height: 100%;
+    margin: 25px;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 1fr 1fr 10%;
+    justify-items: stretch;
+    align-items: center;
+    grid-template-areas:
+      "p0 d p1"
+      "c-0 bc c-1"
+      "d-w-s d-w-s d-w-s";
+  }
+
+  #display-player-0 {
+    grid-area: p0;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  #img {
+    grid-area: d;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem;
+  }
+
+  #dice-image {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px,
+      rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  }
+
+  #display-player-1 {
+    grid-area: p1;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  #current-0 {
+    grid-area: c-0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #btn-container {
+    grid-area: bc;
+    text-align: center;
+  }
+
+  #buttons {
+    height: 100%;
+    display: flexbox;
+    justify-items: center;
+  }
+  .btn {
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background: #fff;
+    line-height: 5px;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px,
+      rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+
+  .btn:hover {
+    box-shadow: rgb(246, 84, 174) -2px -2px 0px 2px,
+      rgb(255, 198, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transform: scale(1.01);
+  }
+
+  #current-1 {
+    grid-area: c-1;
+    display: flex;
+    justify-content: center;
+  }
+
+  #current-0,
+  #current-1 {
+    font-size: xx-large;
+    font-weight: 900;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #display-winner-section {
+    grid-area: d-w-s;
+    display: flex;
+    justify-content: center;
+  }
+
+  #display-winner-p {
+    color: black;
+    font-size: xx-large;
+    bottom: 15px;
+  }
+
+  #footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: grey;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flexbox;
+    flex-direction: column;
+    background-color: rgb(199, 137, 191);
+    text-transform: uppercase;
+  }
+
+  header {
+    display: none;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background-color: grey;
+  }
+
+  #grid-container {
+    height: 100%;
+    margin: 25px;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 1fr 1fr 10%;
+    justify-items: stretch;
+    align-items: center;
+    grid-template-areas:
+      "p0 d p1"
+      "c-0 bc c-1"
+      "d-w-s d-w-s d-w-s";
+  }
+
+  #display-player-0 {
+    grid-area: p0;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  #img {
+    grid-area: d;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem;
+  }
+
+  #dice-image {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px,
+      rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  }
+
+  #display-player-1 {
+    grid-area: p1;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  #current-0 {
+    grid-area: c-0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #btn-container {
+    grid-area: bc;
+    text-align: center;
+  }
+
+  #buttons {
+    height: 100%;
+    display: flexbox;
+    justify-items: center;
+  }
+  .btn {
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background: #fff;
+    line-height: 5px;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px,
+      rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+
+  .btn:hover {
+    box-shadow: rgb(246, 84, 174) -2px -2px 0px 2px,
+      rgb(255, 198, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transform: scale(1.01);
+  }
+
+  #current-1 {
+    grid-area: c-1;
+    display: flex;
+    justify-content: center;
+  }
+
+  #current-0,
+  #current-1 {
+    font-size: xx-large;
+    font-weight: 900;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #display-winner-section {
+    grid-area: d-w-s;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flexbox;
+    flex-direction: column;
+    background-color: rgb(199, 137, 191);
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+
+  header {
+    display: none;
+  }
+
+  #grid-container {
+    height: 100vh;
+    margin: 1rem;
+    justify-content: space-around;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 1fr 1fr 0.2fr;
+
+    align-items: center;
+    grid-template-areas:
+      "p0 d p1"
+      "c-0 bc c-1"
+      "d-w-s d-w-s d-w-s";
+  }
+
+  #display-player-0 {
+    grid-area: p0;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  #img {
+    grid-area: d;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  #dice-image {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px,
+      rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  }
+
+  #display-player-1 {
+    grid-area: p1;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  #current-0 {
+    grid-area: c-0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #btn-container {
+    grid-area: bc;
+    text-align: center;
+  }
+
+  #buttons {
+    height: 100%;
+    display: flexbox;
+    justify-items: center;
+  }
+  .btn {
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background: #fff;
+    line-height: 10px;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 26px;
+    font-weight: 600;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px,
+      rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+
+  .btn:hover {
+    box-shadow: rgb(246, 84, 174) -2px -2px 0px 2px,
+      rgb(255, 198, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transform: scale(1.01);
+  }
+
+  #current-1 {
+    grid-area: c-1;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  #current-0,
+  #current-1 {
+    font-size: 3rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #display-winner-section {
+    grid-area: d-w-s;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flexbox;
+    flex-direction: column;
+    background-color: rgb(199, 137, 191);
+    text-transform: uppercase;
+  }
+
+  header {
+    display: none;
+  }
+
+  #grid-container {
+    height: 100vh;
+    margin: 1rem;
+    justify-content: space-around;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 50% 30% 10%;
+
+    align-items: center;
+    grid-template-areas:
+      "p0 d p1"
+      "c-0 bc c-1"
+      "d-w-s d-w-s d-w-s";
+  }
+
+  #display-player-0 {
+    grid-area: p0;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  #img {
+    grid-area: d;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+  }
+
+  #dice-image {
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px,
+      rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  }
+
+  #display-player-1 {
+    grid-area: p1;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  #current-0 {
+    grid-area: c-0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #btn-container {
+    grid-area: bc;
+    text-align: center;
+  }
+
+  #buttons {
+    height: 100%;
+    display: flexbox;
+    justify-items: center;
+  }
+  .btn {
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background: #fff;
+    line-height: 24px;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px,
+      rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+
+  .btn:hover {
+    box-shadow: rgb(246, 84, 174) -2px -2px 0px 2px,
+      rgb(255, 198, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transform: scale(1.01);
+  }
+
+  #current-1 {
+    grid-area: c-1;
+    display: flex;
+    justify-content: center;
+  }
+
+  #current-0,
+  #current-1 {
+    font-size: 3rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #display-winner-section {
+    grid-area: d-w-s;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer {
+    display: none;
+  }
+}
