@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="diceGame.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Roll the Dice</h1>
+    </header>
+
+    <main id="grid-container">
+      <section>
+        <h2 id="display-player-0">Player 1</h2>
+        <p class="display-wins">Total Wins</p>
+        <p id="total-wins-0"></p>
+      </section>
+      <section id="current-0">
+        <p class="display-current">0</p>
+      </section>
+      <section>
+        <div id="img">
+          <img id="dice-image" src="dice.png" />
+        </div>
+      </section>
+      <section id="btn-container">
+        <div>
+          <button class="btn" id="btn-roll">Roll</button>
+          <button class="btn" id="btn-hold">Hold</button>
+          <button class="btn" id="btn-new">New</button>
+        </div>
+      </section>
+
+      <section>
+        <h2 id="display-player-1">Player 2</h2>
+        <p class="display-wins">Total Wins</p>
+        <p id="total-wins-1"></p>
+      </section>
+      <section id="current-1">
+        <p class="display-current">0</p>
+      </section>
+      <section id="display-winner-section">
+        <p id="display-winner-p"></p>
+      </section>
+    </main>
+
+    <footer id="footer">Copyright</footer>
+    <script src="dicegame.js"></script>
+  </body>
+</html>
