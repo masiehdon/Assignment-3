@@ -41,7 +41,7 @@ let newGame = function () {
 // rollBtn
 roll.addEventListener("click", function () {
   displayWinnerSection.classList.remove("winner");
-  displayWinnerP.textContent = "";
+  displayWinnerP.textContent = " ";
   // Generating randomNumber and adapting dice-image
   let diceNumber = Math.trunc(Math.random() * 6) + 1;
   img.src = `dice-${diceNumber}.png`;
