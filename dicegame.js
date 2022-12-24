@@ -76,3 +76,11 @@ hold.addEventListener("click", switchPlayer);
 // NewGame eventhandler
 
 newGameBtn.addEventListener("click", newGame);
+
+$("#rules").on({
+  click: function () {
+    $("#img").slideToggle(),
+      $("#game-rules").toggleClass("active").slideToggle(),
+      $(this).text($(this).text() == "Show less" ? "Game Rules" : "Show less");
+  },
+});
