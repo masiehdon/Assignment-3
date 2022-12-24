@@ -34,6 +34,7 @@ let newGame = function () {
   document.getElementById("dice-image").src = "dice.png";
   displayWinnerP.textContent = "";
   displayWinnerSection.classList.remove("winner");
+  $("#winner-text").hide();
 };
 
 // -------------------------------------------------------------------------------
@@ -45,13 +46,17 @@ roll.addEventListener("click", function () {
   // Generating randomNumber and adapting dice-image
   let diceNumber = Math.trunc(Math.random() * 6) + 1;
   img.src = `dice-${diceNumber}.png`;
-
-  if (scoreArr[activePlayer] > 30) {
+  $("#winner-text").hide();
+  $("#img").toggle();
+  if (scoreArr[activePlayer] >= 10) {
     document.getElementById(`current-${activePlayer}`).textContent =
       scoreArr[activePlayer];
     totalWins[activePlayer] += 1;
     document.getElementById(`total-wins-${activePlayer}`).textContent =
       totalWins[activePlayer];
+    $("#winner-text").text(`Player ${activePlayer + 1} wins. Great job!`);
+    $("#winner-text").toggle();
+    $("#img").hide();
 
     displayWinnerP.textContent = `Player ${activePlayer + 1} wins!!!`;
 
@@ -60,13 +65,14 @@ roll.addEventListener("click", function () {
   } else if (diceNumber === 3) {
     document.getElementById(`current-${activePlayer}`).textContent = 0;
     scoreArr[activePlayer] = 0;
+    $("#img").show();
     switchPlayer();
   } else {
     scoreArr[activePlayer] += diceNumber;
     document.getElementById(`current-${activePlayer}`).textContent =
       scoreArr[activePlayer];
-
     console.log(`${activePlayer}` + "  " + scoreArr[activePlayer]);
+    $("#img").show();
   }
 });
 
@@ -75,7 +81,11 @@ hold.addEventListener("click", switchPlayer);
 
 // NewGame eventhandler
 
-newGameBtn.addEventListener("click", newGame);
+$("#btn-new").on({
+  click: function () {
+    newGame(), $("#img").show();
+  },
+});
 
 $("#rules").on({
   click: function () {
