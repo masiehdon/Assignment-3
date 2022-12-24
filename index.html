@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="diceGame.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -25,12 +26,21 @@
         <div id="img">
           <img id="dice-image" src="dice.png" />
         </div>
+        <div id="game-rules">
+          <p>
+            Clicking the "Roll" button generates a randon number. By clicking
+            "hold" you save your points and its next players turn. If you roll a
+            3 your scores are set to 0 and its next players turn. First player
+            reaching more than 30 points wins!
+          </p>
+        </div>
       </section>
       <section id="btn-container">
         <div>
           <button class="btn" id="btn-roll">Roll</button>
           <button class="btn" id="btn-hold">Hold</button>
           <button class="btn" id="btn-new">New</button>
+          <button class="btn" id="rules">Game rules</button>
         </div>
       </section>
 
