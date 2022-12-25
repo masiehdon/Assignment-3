@@ -30,6 +30,14 @@
   font-weight: bold;
 }
 
+#winner-text {
+  background-color: rgb(250, 246, 12);
+  text-align: center;
+  padding: 25%;
+  font-size: 2rem;
+  display: none;
+}
+
 @media only screen and (min-width: 900px) {
   body {
     height: 100vh;
@@ -301,6 +309,16 @@
   footer {
     display: none;
   }
+
+  #winner-text {
+    background-color: rgb(250, 246, 12);
+    text-align: center;
+    padding: 5%;
+    margin: 10%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 400px) and (max-width: 600px) {
@@ -429,6 +447,16 @@
   footer {
     display: none;
   }
+
+  #winner-text {
+    background-color: rgb(250, 246, 12);
+    text-align: center;
+    padding: 5%;
+    margin: 10%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -514,11 +542,11 @@
     cursor: pointer;
     color: rgb(0, 0, 0);
     background: #fff;
-    line-height: 24px;
+    line-height: 12px;
     border-radius: 40px;
     padding: 10px;
     margin: 10px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px,
       rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
@@ -554,6 +582,16 @@
   }
 
   footer {
+    display: none;
+  }
+
+  #winner-text {
+    background-color: rgb(250, 246, 12);
+    text-align: center;
+    padding: 5%;
+    margin: 5%;
+    font-size: 1rem;
+    font-weight: 600;
     display: none;
   }
 }
