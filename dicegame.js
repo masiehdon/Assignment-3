@@ -48,7 +48,7 @@ roll.addEventListener("click", function () {
   img.src = `dice-${diceNumber}.png`;
   $("#winner-text").hide();
   $("#img").toggle();
-  if (scoreArr[activePlayer] >= 10) {
+  if (scoreArr[activePlayer] >= 30) {
     document.getElementById(`current-${activePlayer}`).textContent =
       scoreArr[activePlayer];
     totalWins[activePlayer] += 1;
